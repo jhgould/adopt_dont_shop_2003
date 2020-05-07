@@ -7,7 +7,7 @@
 <p><%= @shelters.city %></p>
 <p><%= @shelters.state %></p>
 <p><%= @shelters.zip %></p>
-<p><a href="/shelters/<%= @shelters.id %>/edit">Update Shelter</a></p>
+<%= link_to  "Update Shelter", "/shelters/#{@shelters.id}/edit" %>
 <form action="/shelters/<%= @shelters.id %>" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="_method" value="DELETE">
