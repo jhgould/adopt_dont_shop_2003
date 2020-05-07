@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Update Shelters" do
+RSpec.describe "Update Shelters", type: :feature do
   it "I can update a shelters info" do
     shelter_1 = Shelter.create(name: "shelter_1",
                                address: "123 something lane",
