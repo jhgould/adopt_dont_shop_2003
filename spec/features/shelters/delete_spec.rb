@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "User can delete a shelter", type: :feature do
-  xit "can delete an existing shelter" do
+  it "can delete an existing shelter" do
     shelter_1 = Shelter.create(name: "shelter_1",
                                address: "123 something lane",
                                city: "Denver",
