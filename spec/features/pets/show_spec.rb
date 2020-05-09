@@ -16,12 +16,12 @@ RSpec.describe "shelter pet index", type: :feature do
                        name: "Bear",
                        age: 2,
                        sex: "M",
-                       shelter: shelter_1.id)
+                       shelter_id: shelter_1.id)
     pet_2 = Pet.create(image: "image goes here",
                       name: "Duke",
                       age: 2,
                       sex: "M",
-                      shelter: shelter_2.id)
+                      shelter_id: shelter_2.id)
 
     visit "/pets/#{pet_1.id}"
 
