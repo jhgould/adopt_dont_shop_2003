@@ -1,5 +1,7 @@
 <h1> Shelter Pets Index</h1>
 
-<% @shelter_pets.each do |sp| %>
-  <p1><%= sp.name %></p1>
+<p><a href="/shelters/<%= @shelter.id %>/pets/new" >Create Pet</a></p>
+
+<% @shelter_pets.each do |pet| %>
+  <p><%= pet.name %></p>
 <% end %>
