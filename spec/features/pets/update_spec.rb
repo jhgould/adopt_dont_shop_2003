@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "shelter pet index", type: :feature do
-  it "show all the pets at a givin shelter" do
+RSpec.describe "pet update", type: :feature do
+  it "update pets info" do
     shelter_1 = Shelter.create(name: "shelter_1",
                                address: "123 something lane",
                                city: "Denver",
@@ -23,32 +23,22 @@ RSpec.describe "shelter pet index", type: :feature do
                       sex: "M",
                       shelter_id: shelter_2.id)
 
-    visit "/pets/#{pet_1.id}"
+  visit "/pets/#{pet_1.id}"
 
-    expect(page).to have_content(pet_1.image)
-    expect(page).to have_content(pet_1.name)
-    # expect(page).to have_content(pet_1.description)
-    expect(page).to have_content(pet_1.age)
-    expect(page).to have_content(pet_1.sex)
-    # expect(page).to have_content(pet_1.adoption_status)
+  click_link "Update Pet"
 
-    visit "/pets/#{pet_2.id}"
+  expect(current_path).to eq("/pets/#{pet_1.id}/edit")
 
-    expect(page).to have_content(pet_2.image)
-    expect(page).to have_content(pet_2.name)
-    # expect(page).to have_content(pet_1.description)
-    expect(page).to have_content(pet_2.age)
-    expect(page).to have_content(pet_2.sex)
+  fill_in "image", with: "New Image Here"
+  fill_in "name", with: "Bear Dawg"
+  # fill_in :description, with: "Description"
+  fill_in "age", with: 3
+  fill_in "sex", with: "male"
 
+  click_button "Update Pet"
 
-  end
+  expect(current_path).to eq("/pets/#{pet_1.id}")
+
+  expect(page).to have_content("Bear Dawg")
+ end
 end
-#     As a visitor
-# When I visit '/pets/:id'
-# Then I see the pet with that id including the pet's:
-# - image
-# - name
-# - description
-# - approximate age
-# - sex
-# - adoptable/pending adoption status

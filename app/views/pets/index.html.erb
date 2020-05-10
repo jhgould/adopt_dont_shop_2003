@@ -2,5 +2,5 @@
 
 
 <% @pets.each do |pet| %>
-  <p1><%= pet.name %></p1>
+  <p1><a href=/pets/<%= pet.id %>"><%= pet.name %></a></p1>
 <% end %>
