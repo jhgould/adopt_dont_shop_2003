@@ -1,10 +1,22 @@
-<p><a href='/'</a>Home</p>
 
 <h1>Index</h1>
 
+<ul>
+    <li><a href="/shelters"> Shelter Index</a></li>
+</ul>
+
+
 
 <% @pets.each do |pet| %>
-  <p1><a href=/pets/<%= pet.id %>"><%= pet.name %></a></p1>
+  <h3><a href=/pets/<%= pet.id %>"><%= pet.name %></a></h3>
+  <p1><%= pet.age %></p1>
+  <p1><%= pet.image %></p1>
+  <p1><%= pet.sex %></p1>
+  <p1><a href="/shelters/<%= pet.shelter_id%>"</a>Shelter</p1>
+
+
+
+
   <p><a href="/pets/<%= pet.id %>/edit" >Update Pet</a></p>
   <form action="/pets/<%= pet.id %>" method="POST">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">

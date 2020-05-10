@@ -1,3 +1,2 @@
 class Pet < ApplicationRecord
-
 end

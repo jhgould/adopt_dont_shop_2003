@@ -24,8 +24,10 @@ class PetsController < ApplicationController
     pet = Pet.create({
               image: params[:image],
               name: params[:name],
+              description: params[:description],
               age: params[:age],
               sex: params[:sex],
+              adoption_status: params[:adoption_status],
               shelter_id: shelter
       })
 
@@ -68,6 +70,18 @@ class PetsController < ApplicationController
 
   def pet_params
     params.permit(:image, :name, :age, :sex)
+  end
+
+  def shelter_name
+    name = ""
+    @pets.each do |pet|
+      @shelters.each do |shelter|
+        if pet[:shelter_id] == shelter[:id]
+          name = shelter[:name]
+        end
+      end
+    end
+    name
   end
 
 end
