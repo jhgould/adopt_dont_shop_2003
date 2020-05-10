@@ -1,7 +1,17 @@
+<p><a href='/'</a>Home</p>
+
 <h1> Shelter Pets Index</h1>
 
 <p><a href="/shelters/<%= @shelter.id %>/pets/new" >Create Pet</a></p>
 
 <% @shelter_pets.each do |pet| %>
-  <p><%= pet.name %></p>
+<p1><a href=/pets/<%= pet.id %>"><%= pet.name %></a></p1>
+<p><a href="/pets/<%= pet.id %>/edit" >Update Pet</a></p>
+<form action="/pets/<%= pet.id %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Pet"/>
+</form>
+
+
 <% end %>
