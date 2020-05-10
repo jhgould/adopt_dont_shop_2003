@@ -8,11 +8,13 @@
 
 
 <% @pets.each do |pet| %>
-  <h3><a href=/pets/<%= pet.id %>"><%= pet.name %></a></h3>
-  <p1><%= pet.age %></p1>
-  <p1><%= pet.image %></p1>
-  <p1><%= pet.sex %></p1>
-  <p1><a href="/shelters/<%= pet.shelter_id%>"</a>Shelter</p1>
+<ul>
+  <li><h3><a href=/pets/<%= pet.id %>"><%= pet.name %></a></h3></li>
+  <li><p1><%= pet.age %></p1></li>
+  <li><p1><%= pet.image %></p1></li>
+  <li><p1><%= pet.sex %></p1></li>
+  <li><p1><a href="/shelters/<%= pet.shelter_id%>"</a>Shelter</p1></li>
+</ul>
 
 
 
