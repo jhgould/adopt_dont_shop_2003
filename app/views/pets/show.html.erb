@@ -1,10 +1,17 @@
-<p><a href='/'</a>Home</p>
+<ul>
+    <li><a href="/shelters"> Shelter Index</a></li>
+    <li><a href="/pets"> Pets Index</a></li>
+</ul>
 
 
-<h3>Pet: <%=@pet.name %></h3>
-<p1>Picture: <%=@pet.image %> </p1>
-<p1>age: <%=@pet.age %> </p1>
-<p1>sex: <%=@pet.sex %> </p1>
+<ul>
+  <li><h3>Pet: <%=@pet.name %></h3></li>
+  <li><p1>Picture: <%=@pet.image %></p1></li>
+  <li><p1>Description: <%=@pet.description %></p1></li>
+  <li><p1>age: <%=@pet.age %></p1></li>
+  <li><p1>sex: <%=@pet.sex %></p1></li>
+  <li><p1>Adopted?: <%=@pet.adoption_status %></p1></li>
+</ul>
 
 <p><a href="/pets/<%= @pet.id %>/edit" >Update Pet</a></p>
 <form action="/pets/<%= @pet.id %>" method="POST">
